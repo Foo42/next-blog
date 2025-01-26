@@ -13,7 +13,7 @@ export default function Home(props: Props) {
     <li key={post.filePath}>
       <a href={`/posts/${post.metadata.slug}`}>
         <div>{post.metadata.title}</div>
-        <div style={{ fontSize: '0.5em' }}>{post.metadata.date}</div>
+        <div style={{ fontSize: '0.5em' }}>{post.metadata.date.toISOString.split('T')[0]}</div>
       </a>
     </li>))
   return (
