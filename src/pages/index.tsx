@@ -9,7 +9,13 @@ type Props = {
 }
 
 export default function Home(props: Props) {
-  const postLinks = props.posts.map(post => (<li key={post.filePath}><a href={`/posts/${post.metadata.slug}`}>{post.metadata.title}</a></li>))
+  const postLinks = props.posts.map(post => (
+    <li key={post.filePath}>
+      <a href={`/posts/${post.metadata.slug}`}>
+        <div>{post.metadata.title}</div>
+        <div style={{ fontSize: '0.5em' }}>{post.metadata.date}</div>
+      </a>
+    </li>))
   return (
     <>
       <Head>
@@ -22,7 +28,7 @@ export default function Home(props: Props) {
         <main className={styles.main}>
           <div className='stack' style={{ maxWidth: '80ch', backgroundColor: 'white', padding: 'var(--s1)' }}>
             <h2>Recent Posts</h2>
-            <ul>
+            <ul style={{listStyleType: 'none'}}>
               {postLinks}
             </ul>
           </div>
