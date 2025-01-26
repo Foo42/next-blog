@@ -9,13 +9,15 @@ type Props = {
 }
 
 export default function Home(props: Props) {
-  const postLinks = props.posts.map(post => (
-    <li key={post.filePath}>
+  const postLinks = props.posts.map(post => {
+    const dateString = post.metadata.date instanceof Date ? post.metadata.date.toISOString() : post.metadata.date
+    return (<li key={post.filePath}>
       <a href={`/posts/${post.metadata.slug}`}>
         <div>{post.metadata.title}</div>
-        <div style={{ fontSize: '0.5em' }}>{post.metadata.date.toISOString.split('T')[0]}</div>
+        <div style={{ fontSize: '0.5em' }}>{dateString.split('T')[0]}</div>
       </a>
-    </li>))
+    </li>)
+  })
   return (
     <>
       <Head>
