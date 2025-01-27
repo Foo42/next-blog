@@ -50,6 +50,12 @@ export async function listSortedPosts(): Promise<PostFile[]>{
   })
 }
 
+export async function loadFileFromSlug(slug: string): Promise<PostFile | undefined> {
+  const file = (await listSortedPosts()).find(({metadata}) => metadata.slug === slug)
+  console.log(({slug, file}))
+  return file
+}
+
 function generateMissingSlug<T extends {title: string, slug?: string}>(metadata: T): T & {slug: string} {
   const generatedSlug = metadata.title.replace(/\W+/g, '-')
   return {...metadata, slug: metadata.slug ?? generatedSlug}
