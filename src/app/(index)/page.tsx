@@ -18,12 +18,12 @@ export default async function Home() {
   })
   return (
     <main className={styles.main}>
-      <div className='stack' style={{ maxWidth: '80ch', backgroundColor: 'white', padding: 'var(--s1)' }}>
+      <article className='stack' style={{ maxWidth: '80ch', padding: 'var(--s1)' }}>
         <h2>Recent Posts</h2>
         <ul style={{listStyleType: 'none'}}>
           {postLinks}
         </ul>
-      </div>
+      </article>
     </main>
   )
 }
