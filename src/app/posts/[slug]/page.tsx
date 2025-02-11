@@ -5,7 +5,7 @@ type Params = {
   slug: string
 }
 type Props = {
-  params: Params
+  params: Promise<Params>
 }
 
 export async function generateStaticParams(): Promise<Params[]> {
@@ -16,7 +16,8 @@ export async function generateStaticParams(): Promise<Params[]> {
 
 
 export default async function Post(props: Props) {
-  const post = await loadFileFromSlug(props.params.slug)
+  const params = await props.params
+  const post = await loadFileFromSlug(params.slug)
   if (post === undefined){
     // todo custom error to return a 404
     throw new Error('Not found')
