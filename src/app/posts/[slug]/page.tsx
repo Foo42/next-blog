@@ -23,7 +23,7 @@ export default async function Post(props: Props) {
   }
   return (
     <main>
-      <article style={{ maxWidth: '80ch', margin: 'auto', textAlign: 'justify' }}>
+      <article style={{ margin: 'auto', textAlign: 'justify' }}>
         <h2>{post.metadata.title}</h2>
         <Markdown markdown={post.markdown} initialHeadingLevel={2} />
       </article>

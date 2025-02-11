@@ -1,10 +1,11 @@
+import React from 'react'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { PropsWithChildren } from "react"
 
-import '@/styles/globals.css'
-import '@/styles/typography2.css'
-import styles from '@/styles/Layout.module.css'
+import './globals.css'
+import './typography2.css'
+import styles from './layout.module.css'
 
 export const metadata: Metadata = {
   title: {
@@ -20,11 +21,21 @@ function RootLayout({children}: PropsWithChildren<{}>){
     <html lang="en">
       <body>
         <header className="page-header">
-          <div>
-            <div className={styles.banner}>
-              <h1><Link href="/">Julian&apos;s Thoughts</Link></h1>
-            </div>
-            {/* <nav>This is nav</nav> */}
+          <div className={styles.banner}>
+            <h1><Link href="/">Julian Haeger</Link></h1>
+            <nav>
+              <ul style={{display: 'flex', flexDirection: 'row', listStyleType: 'none', gap: '1rem'}}>
+                <li>
+                  Some Link
+                </li>
+                <li>
+                  Another Link
+                </li>
+                <li>
+                  Third Link
+                </li>
+              </ul>
+            </nav>
           </div>
         </header>
         {children}

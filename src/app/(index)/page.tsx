@@ -1,29 +1,37 @@
-import styles from '@/styles/Home.module.css'
-import { listSortedPosts } from '../../../lib/listPostPaths'
+import React from 'react'
+import {ProfilePic} from '@/components/ProfilePic'
+import PostList from '@/components/postList'
+import Link from 'next/link'
 
 export const metadata = {
-  title: 'Posts',
+  title: 'Home',
 }
 
 export default async function Home() {
-  const posts = await listSortedPosts()
-  const postLinks = posts.map(post => {
-    const dateString = post.metadata.date instanceof Date ? post.metadata.date.toISOString() : post.metadata.date
-    return (<li key={post.filePath}>
-      <a href={`/posts/${post.metadata.slug}`}>
-        <div>{post.metadata.title}</div>
-        <div style={{ fontSize: '0.5em' }}>{dateString.split('T')[0]}</div>
-      </a>
-    </li>)
-  })
+
   return (
-    <main className={styles.main}>
-      <article className='stack' style={{ maxWidth: '80ch', padding: 'var(--s1)' }}>
-        <h2>Recent Posts</h2>
-        <ul style={{listStyleType: 'none'}}>
-          {postLinks}
-        </ul>
-      </article>
+    <main>
+      <section className='card'>
+        <div style={{display: 'flex'}}>
+          <div style={{flex: 1}}>
+            <h3>About Me</h3>
+            blah blah blah
+          </div>
+          <div>
+            <div>
+              <ProfilePic/>
+            </div>
+            <div>
+              Some links to profiles etc
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='card'>
+        <h3><Link href='/posts'>Posts</Link></h3>
+        <PostList/>
+      </section>
     </main>
   )
 }

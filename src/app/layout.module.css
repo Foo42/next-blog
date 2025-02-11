@@ -1,0 +1,22 @@
+.banner {
+  background-color: rgb(var(--banner-rgb));
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: var(--primary-content-max-width);
+  margin: auto;
+}
+
+.banner h2 {
+  text-align: center;
+}
+
+.banner nav {
+  padding: 0 1rem;
+}
+
+.banner nav ul {
+  margin-left:0px;
+  align-items: end;
+}
