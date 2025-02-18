@@ -14,8 +14,8 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: 52, 78, 65;
-  --background-start-rgb: var(--theme-light-green-rgb);
-  --background-end-rgb: var(--theme-light-green-rgb);
+  --background-start-rgb: var(--theme-very-light-green-rgb);
+  --background-end-rgb: var(--theme-very-light-green-rgb);
 
   --card-rgb: var(--theme-very-light-green-rgb);
   --card-border-rgb: 131, 134, 135;
@@ -71,7 +71,7 @@ a {
 }
 
 article {
-  background-color: rgb(var(--background-end-rgb));
+  background-color: whitesmoke;
   padding: var(--s1);
 }
 
@@ -83,10 +83,11 @@ header {
 .card {
   padding: 1rem;
   margin: 1rem;
-  background-color: rgb(var(--card-rgb));
+  background-color: whitesmoke;
   border-radius: 0.5rem;
 }
 
-.pros p {
+.pros :is(p,ul,ol) {
+  font-size: 21px;
   font-family: 'Crimson Text'
 }
