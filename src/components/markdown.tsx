@@ -3,6 +3,7 @@ import Markdownit from 'markdown-it'
 interface Props {
   markdown: string,
   initialHeadingLevel?: number
+  classNames?: string[]
 }
 
 export function Markdown(props: Props) {
@@ -18,6 +19,7 @@ export function Markdown(props: Props) {
     console.log(markdown)
   }
 
+  const className = ['stack', ...(props.classNames ?? [])].join(' ')
   const rendered = mdit.render(markdown)
-  return <div className='stack' dangerouslySetInnerHTML={{ __html: rendered }}></div>
+  return <div className={className} dangerouslySetInnerHTML={{ __html: rendered }}></div>
 }

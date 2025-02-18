@@ -2,10 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { PropsWithChildren } from "react"
+import { Crimson_Text } from 'next/font/google'
 
 import './globals.css'
 import './typography2.css'
 import styles from './layout.module.css'
+
+const crimsonText = Crimson_Text({subsets: ['latin'], weight: '400'})
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +21,7 @@ export const metadata: Metadata = {
 
 function RootLayout({children}: PropsWithChildren<{}>){
   return (
-    <html lang="en">
+    <html lang="en" className={crimsonText.className}>
       <body>
         <header className="page-header">
           <div className={styles.banner}>
@@ -26,7 +29,7 @@ function RootLayout({children}: PropsWithChildren<{}>){
             <nav>
               <ul style={{display: 'flex', flexDirection: 'row', listStyleType: 'none', gap: '1rem'}}>
                 <li>
-                  Some Link
+                  <Link href="/posts">Blog</Link>
                 </li>
                 <li>
                   Another Link

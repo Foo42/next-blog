@@ -2,6 +2,7 @@ import React from 'react'
 import {ProfilePic} from '@/components/ProfilePic'
 import PostList from '@/components/postList'
 import Link from 'next/link'
+import AboutMe from '@/components/AboutMe'
 
 export const metadata = {
   title: 'Home',
@@ -14,8 +15,7 @@ export default async function Home() {
       <section className='card'>
         <div style={{display: 'flex'}}>
           <div style={{flex: 1}}>
-            <h3>About Me</h3>
-            blah blah blah
+            <AboutMe/>
           </div>
           <div>
             <div>

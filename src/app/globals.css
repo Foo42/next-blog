@@ -1,4 +1,11 @@
 :root {
+  --theme-very-dark-green-rgb: 47, 62, 70;
+  --theme-dark-green-rgb: 53, 79, 82;
+  --theme-mid-green-rgb: 82, 121, 111;
+  --theme-light-green-rgb: 132, 169, 140;
+  --theme-very-light-green-rgb: 202, 210, 197;
+
+
   --max-width: 1100px;
   --primary-content-max-width: 55rem;
   --border-radius: 12px;
@@ -7,14 +14,14 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: 52, 78, 65;
-  --background-start-rgb: 163, 177, 138;
-  --background-end-rgb: 163, 177, 138;
+  --background-start-rgb: var(--theme-light-green-rgb);
+  --background-end-rgb: var(--theme-light-green-rgb);
 
-  --card-rgb:  218, 215, 205;
+  --card-rgb: var(--theme-very-light-green-rgb);
   --card-border-rgb: 131, 134, 135;
 
-  --banner-rgb: 58, 90, 64;
-  --banner-text-rgb: 218, 215, 205;
+  --banner-rgb: var(--theme-dark-green-rgb);
+  --banner-text-rgb: var(--theme-very-light-green-rgb);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,7 +45,7 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--theme-very-dark-green-rgb));
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
@@ -78,4 +85,8 @@ header {
   margin: 1rem;
   background-color: rgb(var(--card-rgb));
   border-radius: 0.5rem;
+}
+
+.pros p {
+  font-family: 'Crimson Text'
 }

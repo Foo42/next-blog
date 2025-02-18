@@ -26,7 +26,7 @@ export default async function Post(props: Props) {
     <main>
       <article style={{ margin: 'auto', textAlign: 'justify' }}>
         <h2>{post.metadata.title}</h2>
-        <Markdown markdown={post.markdown} initialHeadingLevel={2} />
+        <Markdown markdown={post.markdown} initialHeadingLevel={2} classNames={['pros']} />
       </article>
     </main>)
 }
