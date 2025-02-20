@@ -13,7 +13,7 @@ async function PostList(){
   })
 
   return (
-    <ul style={{listStyleType: 'none', paddingLeft: 0}}>
+    <ul className='plain'>
       {postLinks}
     </ul>
   )

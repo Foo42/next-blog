@@ -89,5 +89,16 @@ header {
 
 .pros :is(p,ul,ol) {
   font-size: 21px;
-  font-family: 'Crimson Text'
+  font-family: 'Crimson Text';
+  text-align: justify;
+}
+
+ul.plain {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+img.inline-icon {
+  height: 1em;
+  width: auto
 }
