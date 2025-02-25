@@ -27,7 +27,7 @@ function RootLayout({children}: PropsWithChildren<{}>){
           <div className={styles.banner}>
             <h1><Link href="/">Julian Haeger</Link></h1>
             <nav>
-              <ul style={{display: 'flex', flexDirection: 'row', listStyleType: 'none', gap: '1rem'}}>
+              <ul style={{}}>
                 <li>
                   <Link href="/posts">Blog</Link>
                 </li>

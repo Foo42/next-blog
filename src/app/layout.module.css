@@ -1,7 +1,6 @@
 .banner {
   background-color: rgb(var(--banner-rgb));
   padding: 1rem;
-  display: flex;
   justify-content: space-between;
   align-items: flex-end;
   max-width: var(--primary-content-max-width);
@@ -19,4 +18,20 @@
 .banner nav ul {
   margin-left:0px;
   align-items: end;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+/* Non mobile */
+@media(min-width: 40rem) {
+  .banner {
+    display: flex;
+  }
+  .banner nav ul {
+    justify-content: flex-end;
+  }
 }

@@ -19,7 +19,7 @@ export function Markdown(props: Props) {
     console.log(markdown)
   }
 
-  const className = ['stack', ...(props.classNames ?? [])].join(' ')
+  const className = [ ...(props.classNames ?? [])].join(' ')
   const rendered = mdit.render(markdown)
   return <div className={className} dangerouslySetInnerHTML={{ __html: rendered }}></div>
 }

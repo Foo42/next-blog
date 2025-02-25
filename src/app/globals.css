@@ -87,11 +87,6 @@ header {
   border-radius: 0.5rem;
 }
 
-.pros :is(p,ul,ol) {
-  font-size: 21px;
-  font-family: 'Crimson Text';
-  text-align: justify;
-}
 
 ul.plain {
   list-style-type: none;
