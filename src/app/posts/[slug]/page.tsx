@@ -9,6 +9,14 @@ type Props = {
   params: Promise<Params>
 }
 
+export async function generateMetadata(props: Props) {
+  const params = await props.params
+  const post = stripH1(await loadFileFromSlug(params.slug))
+  return {
+    title: post?.metadata.title ?? 'Blog Post',
+  }
+}
+
 export async function generateStaticParams(): Promise<Params[]> {
   const sortedPosts = await listSortedPosts()
   const sortedSlugs = sortedPosts.map(({metadata}) => metadata.slug)
