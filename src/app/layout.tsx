@@ -23,11 +23,11 @@ function RootLayout({children}: PropsWithChildren<{}>){
   return (
     <html lang="en" className={crimsonText.className}>
       <body>
-        <header className="page-header">
-          <div className={styles.banner}>
+        <header className={styles.banner}>
+          <div className={styles.bannerContent}>
             <h1><Link href="/">Julian Haeger</Link></h1>
             <nav>
-              <ul style={{}}>
+              <ul>
                 <li>
                   <Link href="/posts">Blog</Link>
                 </li>

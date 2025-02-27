@@ -1,5 +1,6 @@
 import { Markdown } from "@/components/markdown"
 import { listSortedPosts, loadFileFromSlug, PostFile } from "../../../../lib/listPostPaths"
+import styles from "./style.module.css"
 
 type Params = {
   slug: string
@@ -25,7 +26,12 @@ export default async function Post(props: Props) {
   return (
     <main>
       <article className='stack card' style={{ textAlign: 'justify' }}>
-        <h2>{post.metadata.title}</h2>
+        <header className={styles.postHeader}>
+          <h2>{post.metadata.title}</h2>
+          <div className={styles.postDate}>
+            {post.metadata.date.toISOString().split('T')[0]}
+          </div>
+        </header>
         <Markdown markdown={post.markdown} initialHeadingLevel={2} classNames={['pros']} />
       </article>
     </main>)

@@ -1,10 +1,15 @@
 .banner {
   background-color: rgb(var(--banner-rgb));
+  color: rgb(var(--banner-text-rgb));
   padding: 1rem;
+}
+
+.bannerContent {
   justify-content: space-between;
   align-items: flex-end;
   max-width: var(--primary-content-max-width);
   margin: auto;
+  padding: 0 2rem;
 }
 
 .banner h2 {
@@ -25,10 +30,9 @@
   justify-content: center;
 }
 
-
 /* Non mobile */
 @media(min-width: 40rem) {
-  .banner {
+  .bannerContent {
     display: flex;
   }
   .banner nav ul {

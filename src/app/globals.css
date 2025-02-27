@@ -75,10 +75,6 @@ article {
   padding: var(--s1);
 }
 
-header {
-  color: rgb(var(--banner-text-rgb));
-  background-color: rgb(var(--banner-rgb));
-}
 
 .card {
   padding: 1rem;
