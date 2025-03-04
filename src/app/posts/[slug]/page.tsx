@@ -14,6 +14,10 @@ export async function generateMetadata(props: Props) {
   const post = stripH1(await loadFileFromSlug(params.slug))
   return {
     title: post?.metadata.title ?? 'Blog Post',
+    authors: [{name: 'Julian Haeger'}],
+    openGraph: {
+      title: post?.metadata.title ?? 'Blog Post'
+    }
   }
 }
 

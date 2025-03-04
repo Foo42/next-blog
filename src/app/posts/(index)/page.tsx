@@ -9,7 +9,7 @@ export default async function PostsIndex() {
   return (
     <main>
       <div className='card'>
-        <h2>Recent Posts</h2>
+        <div style={{display: 'flex', alignItems: 'baseline', justifyContent: 'space-between'}}><h2>Posts</h2><div><a href='/feeds/posts/atom.xml'>Feed</a></div></div>
         <PostList/>
       </div>
     </main>

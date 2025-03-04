@@ -20,6 +20,7 @@ const metaDataSchema = z.object({
   title: z.string(),
   date: z.date().or(z.string().transform(s => new Date(s))),
   slug: z.string().optional(),
+  summary: z.string().optional(),
   aliases: z.array(z.string()).optional().default([]),
   tags: z.array(z.string()).optional().default([])
 }).passthrough().transform(generateMissingSlug)
