@@ -1,6 +1,7 @@
 import { Feed, Item as FeedItem } from "feed"
 import profilePic from "../../../../../public/profile-pic.jpg"
 import { listSortedPosts } from "lib/listPostPaths"
+import Markdownit from 'markdown-it'
 
 
 
@@ -9,12 +10,16 @@ export async function GET(request: Request) {
   const parsedUrl = new URL(feedUrl)
   const origin = parsedUrl?.origin
   const posts = await listSortedPosts()
+
+  const mdit = new Markdownit()
   const feedItems = posts.map(post => {
+    const contentHtml = mdit.render(post.markdown)
     const feedItem: FeedItem = {
       title: post.metadata.title,
       date: post.metadata.date,
       link: `${origin}/posts/${post.metadata.slug}`,
-      description: post.metadata.summary
+      description: post.metadata.summary,
+      content: contentHtml
     }
     return feedItem
   })
