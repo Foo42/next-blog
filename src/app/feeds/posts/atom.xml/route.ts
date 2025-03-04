@@ -6,7 +6,7 @@ import { listSortedPosts } from "lib/listPostPaths"
 
 export async function GET(request: Request) {
   const feedUrl = request.url
-  const parsedUrl = URL.parse(feedUrl)
+  const parsedUrl = new URL(feedUrl)
   const origin = parsedUrl?.origin
   const posts = await listSortedPosts()
   const feedItems = posts.map(post => {
