@@ -4,6 +4,7 @@ aliases:
   - /code-intent-does-it-matter
 title: Code intent - does it matter?
 slug: Code-intent-does-it-matter
+summary: Does it really matter _why_ a piece of code was written, or should function be sufficient?
 ---
 
 I recently read an [article](http://mikegrouchy.com/blog/2013/03/yes-your-code-does-need-comments.html) which argued the case for code comments. The writer expressed the view, that while comments explaining what code does are mostly useless, comments remain the best way to express the intent of code. On the surface that’s something I’d broadly agree with, the idea that, as it is elsewhere expressed, comments are for “why”, not “how”.

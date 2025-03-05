@@ -1,6 +1,7 @@
 ---
 date: 2017-03-30
 title: Exploring Computation in Content Addressable Spaces
+summary: Playing with ideas around graphs of immutable values and expressions
 ---
 
 In the problem domain of the company I work at, we have the common situation where external data is fetched into our system on a schedule and a number jobs occur which perform processing on it and store the results. Our current solution is a common enough mixture of queues, processing workers, a document database for raw data, and relational database for processed data. The system works, though has some room for improvement, specifically:
@@ -43,7 +44,7 @@ When we considered applying RTFs to values, we noted that there was an immutable
 
 By contrast, if we consider the expression `f(l)` in which the function `f` is applied to the label `l` we can see that the result depends on the value `l` is bound to at the time the expression is evaluated. Rather than having a single immutable value, we find the expression `f(l)` in fact has a single value for each value of `l`.
 
-We can model this behavior by introducing a new way of binding a label, in which we supply not a concrete value, but an expression by which values are generated. These "generated bindings" would automatically be rebound to new values each time a label referenced in their "binding expression" was rebound.
+We can model this behaviour by introducing a new way of binding a label, in which we supply not a concrete value, but an expression by which values are generated. These "generated bindings" would automatically be rebound to new values each time a label referenced in their "binding expression" was rebound.
 
 For example, given:
 

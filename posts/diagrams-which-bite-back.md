@@ -4,6 +4,7 @@ aliases:
   - /diagrams-which-bite-back
 title: Diagrams which bite back
 slug: Diagrams-which-bite-back
+description: Keeping diagrams up-to-date with executable checks which assert they match reality
 ---
 
 One of the key ideas behind executable specifications, is that they form a set of specifications which “bite back”. Rather than just stating how the system should ought to work, and maybe did at some point in history, they can be executed to verify the facts they state still hold true to the reality of the system.

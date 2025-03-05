@@ -4,11 +4,12 @@ aliases:
   - /the-github-model-of-participation
 title: The Github Model of Participation
 slug: The-Github-Model-of-Participation
+summary: How pull requests may be a useful model for collaborating in other domains
 ---
 
 There are many reasons that Github has become the primary place to host open source repositories and stolen the hearts of many of its users in the process. Doubtless the utility of Git has much to do with it, as do commercial decisions such as free hosting for open source projects, and resisting the short-term gains of clogging pages with ads which look like download buttons (SourceForge, I’m looking at you!).
 
-Outside of the the realm of software much can, and has, been written about the potential for Github, or services of its ilk, to have transformative effects on other document-centric endeavors such as legislation.
+Outside of the the realm of software much can, and has, been written about the potential for Github, or services of its ilk, to have transformative effects on other document-centric endeavours such as legislation.
 
 But I think Github is a demonstration of a principle with a wider reaching value than these.
 

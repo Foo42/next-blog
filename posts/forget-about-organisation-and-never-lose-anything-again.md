@@ -2,6 +2,7 @@
 date: 2019-09-25
 title: Forget About Organisation And Never Lose Anything Again
 slug: forget-about-organisation-and-never-lose-anything-again
+summary: Considering whether moving away from storing things by category and relying on a good index can free us from the hardest part of physical organisation
 ---
 
 # Forget About Organisation And Never Lose Anything Again

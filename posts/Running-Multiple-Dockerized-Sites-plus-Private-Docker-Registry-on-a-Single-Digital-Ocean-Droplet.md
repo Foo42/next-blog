@@ -2,12 +2,13 @@
 date: 2014-10-31
 title: Running Multiple Dockerized Sites plus Private Docker Registry on a Single Digital Ocean Droplet
 slug: Running-Multiple-Dockerized-Sites-plus-Private-Docker-Registry-on-a-Single-Digital-Ocean-Droplet
+summary: Using a containerised reverse proxy to run multiple projects on a Digital Ocean docker host
 ---
 
 ![docker logo](https://d3oypxn00j2a10.cloudfront.net/0.12.6/img/homepage/docker-whale-home-logo.png?e2946566d408)
 
 ## The problem
-I wanted to move a site, this site in fact, from running on my raspberry pi at home to Digital Ocean so as not to have to keep tinkering with flakey dynamic dns issues, but I didn't want to use up an entire droplet for it. While $5 per month isn't much, its totally overkill and it adds up when you start running multiple sites. Furthermore I wanted to experiment with dockerizing it to play with some of the things I've been reading about. This had the added aspect of working out how to manage proprietary code / configuration with docker, since the code for the blog is currently private (out of shame) and the config needs to be as it contains OAuth keys for google log in.
+I wanted to move a site, this site in fact, from running on my raspberry pi at home to Digital Ocean so as not to have to keep tinkering with flaky dynamic dns issues, but I didn't want to use up an entire droplet for it. While $5 per month isn't much, its totally overkill and it adds up when you start running multiple sites. Furthermore I wanted to experiment with dockerizing it to play with some of the things I've been reading about. This had the added aspect of working out how to manage proprietary code / configuration with docker, since the code for the blog is currently private (out of shame) and the config needs to be as it contains OAuth keys for google log in.
 
 ## The Solution
 ### TL;DR

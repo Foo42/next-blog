@@ -2,8 +2,9 @@
 date: 2011-05-10
 aliases:
   - /alternatives-to-storing-and-then-losing-credi
-title: Alternatives to storing (and then loosing) credit card details
-slug: Alternatives-to-storing-and-then-loosing-credit-card-details
+title: Alternatives to storing (and then losing) credit card details
+slug: Alternatives-to-storing-and-then-losing-credit-card-details
+summary: Thoughts on how to avoid storing and losing credit card details
 ---
 
 The recent compromise of Sony’s PlayStation network has been getting a fair deal of coverage in the news, not least because of the escape of credit card details. I’m not a PlayStation user so this doesn’t affect me directly, but it got me thinking.

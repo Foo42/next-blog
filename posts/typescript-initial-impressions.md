@@ -5,7 +5,7 @@ title: Typescript Initial Impressions
 
 This last week I've been using TypeScript to write a small service at work. I've not previously used TypeScript, but had been planning to try it for some time.
 
-In short, I found it a surprisingly pleasant experience overall. Initially of course I was slowed down compared to familiar JavaScript, but I'd estimate by the end of day two, I was already experiencing a net speed up. It was surprising how many small mistakes I was making, and TypeScript was picking up, eliminating many test (or execute) and debug cycles. In fact I believe I only experienced two occasions of unexpected run-time behavior while developing the whole service, and both of these were edge cases.
+In short, I found it a surprisingly pleasant experience overall. Initially of course I was slowed down compared to familiar JavaScript, but I'd estimate by the end of day two, I was already experiencing a net speed up. It was surprising how many small mistakes I was making, and TypeScript was picking up, eliminating many test (or execute) and debug cycles. In fact I believe I only experienced two occasions of unexpected run-time behaviour while developing the whole service, and both of these were edge cases.
 
 The type system *generally* feels like it's on your side rather than working against you.
 
