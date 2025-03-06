@@ -32,10 +32,7 @@ function RootLayout({children}: PropsWithChildren<{}>){
                   <Link href="/posts">Blog</Link>
                 </li>
                 <li>
-                  Another Link
-                </li>
-                <li>
-                  Third Link
+                  <Link href="https://github.com/foo42">Github</Link>
                 </li>
               </ul>
             </nav>

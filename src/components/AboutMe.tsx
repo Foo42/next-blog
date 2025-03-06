@@ -1,5 +1,6 @@
 import React from 'react'
 import { Markdown } from '@/components/markdown'
+import { ProfilePic } from './ProfilePic'
 
 const aboutMeText = `I've been a developer since I graduated in 2006. In that time, there's been plenty of variety. I've worked in scrappy start-ups to big enterprises, built flashy front ends to big-iron backends, monoliths to microservices, and serverless to rack-your-own. I've seen a lot of mistakes, made my fair share, and learned a thing or two along the way.
 
@@ -12,6 +13,7 @@ export default function AboutMe() {
   return (
     <>
       <h3>About Me</h3>
+      <ProfilePic style={{float: 'right', display: 'inline-block', marginLeft: '2rem', border: '0.5rem solid rgb(var(--theme-very-light-green-rgb))'}}/>
       <Markdown markdown={aboutMeText} initialHeadingLevel={4} classNames={['pros']}/>
     </>
   )

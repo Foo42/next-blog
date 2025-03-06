@@ -19,16 +19,6 @@ export default async function Home() {
         <div style={{flex: 1}}>
           <AboutMe/>
         </div>
-        <div>
-          <div className={styles.profilePictureWrapper} >
-            <ProfilePic/>
-          </div>
-          <div>
-            <ul className='plain' style={{textAlign: 'center', paddingTop: '2em'}}>
-                <li><Image className='inline-icon' style={{marginInlineEnd: '0.5em'}} alt='github icon' src={githubIcon}/><Link href='https://github.com/Foo42'>Github</Link></li>
-            </ul>
-          </div>
-        </div>
       </section>
 
       <section className='card'>

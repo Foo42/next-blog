@@ -1,36 +1,12 @@
 section.about_me {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
 }
 
-section.about_me > div:has( :global(img.profile_picture) ) {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
 div.profilePictureWrapper {
   display: flex;
   justify-content: flex-start;
 }
 
-/* Non mobile */
-@media(min-width: 40rem) {
-  section.about_me {
-    flex-direction: row;
-  }
-
-  section.about_me > div:has( :global(img.profile_picture) ) {
-    width: 40%;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  div.profilePictureWrapper {
-    justify-content: center;
-  }
-}
 
 
 
