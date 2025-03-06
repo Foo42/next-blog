@@ -41,6 +41,10 @@ h3 {
   font-size: var(--s1);
 }
 
+:is(h2, h3, h4, h5) {
+  text-align: left;
+}
+
 pre {
   border: 1px solid gray;
   padding: var(--s1);
