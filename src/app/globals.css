@@ -93,3 +93,10 @@ img.inline-icon {
   height: 1em;
   width: auto
 }
+
+
+.warningBox {
+  background-color: rgba(255, 191, 0, 0.5);
+  padding: 1rem;
+  border: 2px solid rgb(255,191,0);
+}
