@@ -23,7 +23,7 @@ function RootLayout({children}: PropsWithChildren<{}>){
   return (
     <html lang="en" className={crimsonText.className}>
       <body>
-        <header className={styles.banner}>
+        <header className={`${styles.banner} raised`}>
           <div className={styles.bannerContent}>
             <h1><Link href="/">Julian Haeger</Link></h1>
             <nav>

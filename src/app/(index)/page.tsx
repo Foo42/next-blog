@@ -15,13 +15,13 @@ export default async function Home() {
 
   return (
     <main>
-      <section className={`card ${styles.about_me}`}>
+      <section className={`card raised ${styles.about_me}`}>
         <div style={{flex: 1}}>
           <AboutMe/>
         </div>
       </section>
 
-      <section className='card'>
+      <section className='card raised'>
         <h3 style={{marginBottom: 'var(--s1)'}}><Link href='/posts'>Posts</Link></h3>
         <PostList/>
       </section>

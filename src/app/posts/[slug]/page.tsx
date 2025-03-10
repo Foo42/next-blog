@@ -38,7 +38,7 @@ export default async function Post(props: Props) {
   }
   return (
     <main>
-      <article className='stack card' style={{ textAlign: 'justify' }}>
+      <article className='stack card raised' style={{ textAlign: 'justify' }}>
         <header className={styles.postHeader}>
           <h2>{post.metadata.title}</h2>
           <div className={styles.postDate}>
