@@ -12,7 +12,7 @@ I live in the North West of England with my wife, 2 kids, and a Cocker Spaniel.
 export default function AboutMe() {
   return (
     <>
-      <h3>About Me</h3>
+      <h3 style={{marginBottom: 'var(--s0)'}}>About Me</h3>
       <ProfilePic style={{float: 'right', display: 'inline-block', marginLeft: '2rem', border: '0.5rem solid rgb(var(--theme-very-light-green-rgb))'}}/>
       <Markdown markdown={aboutMeText} initialHeadingLevel={4} classNames={['pros']}/>
     </>
