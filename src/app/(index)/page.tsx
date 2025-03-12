@@ -1,9 +1,8 @@
 import React from 'react'
-import {ProfilePic} from '@/components/ProfilePic'
 import PostList from '@/components/postList'
 import Link from 'next/link'
 import AboutMe from '@/components/AboutMe'
-import githubIcon from '../../../public/github-mark.svg'
+import lakes from '../../../public/lakes_fade_small-min.png'
 import Image from 'next/image'
 import styles from './style.module.css'
 
@@ -15,10 +14,11 @@ export default async function Home() {
 
   return (
     <main>
-      <section className={`card raised ${styles.about_me}`}>
+      <section className={`card raised ${styles.about_me}`} style={{backgroundImage: `url("${lakes.src}")`}}>
         <div style={{flex: 1}}>
           <AboutMe/>
         </div>
+        <Image src={lakes} className={styles.space_holder} alt='Lake district image for spacing purposes' style={{}}/>
       </section>
 
       <section className='card raised'>

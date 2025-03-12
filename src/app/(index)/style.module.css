@@ -1,4 +1,16 @@
 section.about_me {
+  background-position: bottom -2rem right;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+section.about_me {
+  img.space_holder {
+    width: 100%;
+    height: auto;
+    margin-top: -40%;
+    visibility: hidden
+  }
 }
 
 
