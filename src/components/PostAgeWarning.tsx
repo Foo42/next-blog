@@ -19,10 +19,13 @@ function PostAgeWarning (props: Props) {
     setIsOld(ageAtDisplayTime > 5)
   }, [setIsOld, props.publishDate])
 
-  const oldPostWarning = (<div>Warning: This post is over 5 years old and may not be representative of my current understanding or opinions!</div>)
+  if(!isOld){
+    return null
+  }
+  const oldPostWarning = (<div className="warningBox card"><div>Warning: This post is over 5 years old and may not be representative of my current understanding or opinions!</div></div>)
   return (
     <div className="warningBox card">
-      {isOld ? oldPostWarning : null}
+      {oldPostWarning}
     </div>
   )
 }
