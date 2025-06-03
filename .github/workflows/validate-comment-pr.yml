@@ -1,0 +1,143 @@
+name: Validate Comment PR
+
+on:
+  pull_request:
+    paths:
+      - 'comments/**'
+
+jobs:
+  validate-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate comment PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const matter = require('gray-matter');
+            const { listSortedPosts } = require('./lib/listPostPaths');
+            
+            async function run() {
+              // Get changed files in the PR
+              const { data: prFiles } = await github.rest.pulls.listFiles({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number
+              });
+              
+              // Check if PR only contains one new file
+              if (prFiles.length !== 1) {
+                core.setFailed('Pull request must contain exactly one new file');
+                return;
+              }
+              
+              const file = prFiles[0];
+              
+              // Check if the file is being added (not modified or deleted)
+              if (file.status !== 'added') {
+                core.setFailed('Pull request must only add a new file, not modify or delete');
+                return;
+              }
+              
+              // Check if the file is a markdown file
+              if (!file.filename.endsWith('.md')) {
+                core.setFailed('The new file must be a markdown file (.md)');
+                return;
+              }
+              
+              // Check if the file is in the comments directory
+              if (!file.filename.startsWith('comments/')) {
+                core.setFailed('The new file must be in the comments/ directory');
+                return;
+              }
+              
+              // Extract post name from the comment path
+              const commentPath = file.filename;
+              const pathParts = commentPath.split('/');
+              
+              if (pathParts.length < 3) {
+                core.setFailed('Comment must be in a subdirectory of comments/');
+                return;
+              }
+              
+              const postName = pathParts[1];
+              
+              // Validate that the post exists
+              const posts = await listSortedPosts();
+              const validPostSlugs = posts.map(post => post.metadata.slug);
+              
+              if (!validPostSlugs.includes(postName)) {
+                core.setFailed(`Invalid post name: ${postName}. Comment must be for an existing post.`);
+                return;
+              }
+              
+              // Read the file content
+              const filePath = path.join(process.cwd(), file.filename);
+              let fileContent;
+              try {
+                fileContent = fs.readFileSync(filePath, 'utf8');
+              } catch (error) {
+                core.setFailed(`Failed to read file: ${error.message}`);
+                return;
+              }
+              
+              // Parse front matter
+              let parsed;
+              try {
+                parsed = matter(fileContent);
+              } catch (error) {
+                core.setFailed(`Failed to parse front matter: ${error.message}`);
+                return;
+              }
+              
+              // Get PR author
+              const prAuthor = context.payload.pull_request.user.login;
+              
+              // Check if github_user is set correctly or add it
+              if (!parsed.data.github_user) {
+                // Add github_user to front matter
+                const updatedFrontMatter = {
+                  ...parsed.data,
+                  github_user: prAuthor
+                };
+                
+                // Create updated content with the new front matter
+                const updatedContent = matter.stringify(parsed.content, updatedFrontMatter);
+                
+                // Write the updated content back to the file
+                fs.writeFileSync(filePath, updatedContent);
+                
+                // Commit the changes
+                const commitMessage = `Add github_user to comment front matter`;
+                await exec.exec('git', ['config', '--global', 'user.name', 'GitHub Action']);
+                await exec.exec('git', ['config', '--global', 'user.email', 'action@github.com']);
+                await exec.exec('git', ['add', file.filename]);
+                await exec.exec('git', ['commit', '-m', commitMessage]);
+                await exec.exec('git', ['push']);
+                
+                console.log(`Added github_user: ${prAuthor} to front matter`);
+              } else if (parsed.data.github_user !== prAuthor) {
+                core.setFailed(`github_user in front matter (${parsed.data.github_user}) does not match PR author (${prAuthor})`);
+                return;
+              }
+              
+              console.log('Comment PR validation successful!');
+            }
+            
+            run().catch(error => {
+              core.setFailed(`Workflow failed: ${error.message}`);
+            });
