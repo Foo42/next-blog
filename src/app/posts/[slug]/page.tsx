@@ -2,6 +2,7 @@ import { Markdown } from "@/components/markdown"
 import { listSortedPosts, loadFileFromSlug, PostFile } from "../../../../lib/listPostPaths"
 import styles from "./style.module.css"
 import PostAgeWarning from "@/components/PostAgeWarning"
+import BlogComments from "@/components/BlogComments"
 
 type Params = {
   slug: string
@@ -48,6 +49,7 @@ export default async function Post(props: Props) {
         <PostAgeWarning publishDate={post.metadata.date}/>
         <Markdown markdown={post.markdown} initialHeadingLevel={2} classNames={['pros']} />
       </article>
+      <BlogComments/>
     </main>)
 }
 
