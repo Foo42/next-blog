@@ -23,11 +23,7 @@ function PostAgeWarning (props: Props) {
     return null
   }
   const oldPostWarning = (<div className="warningBox card"><div>Warning: This post is over 5 years old and may not be representative of my current understanding or opinions!</div></div>)
-  return (
-    <div className="warningBox card">
-      {oldPostWarning}
-    </div>
-  )
+  return oldPostWarning
 }
 
 export default PostAgeWarning
