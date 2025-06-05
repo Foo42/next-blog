@@ -64,4 +64,8 @@ ul {
   * {
     margin-bottom: var(--s1);
   }
+
+  a {
+    text-decoration: underline;
+  }
 }
