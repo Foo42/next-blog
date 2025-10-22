@@ -68,4 +68,20 @@ ul {
   a {
     text-decoration: underline;
   }
+
+  blockquote {
+    font-style: italic;
+    margin: 1em 3em;
+    position: relative;
+    padding-left: 1em;
+    border-left: 1px solid grey
+  }
+  blockquote::before {
+    content: "\201C";
+    font-size:4em;
+    position: absolute;
+    left: -0.5em;
+    top:-0.5em;
+    font-family: arial;
+  }
 }
