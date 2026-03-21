@@ -32,6 +32,9 @@ function RootLayout({children}: PropsWithChildren<{}>){
                   <Link href="/posts">Blog</Link>
                 </li>
                 <li>
+                  <Link href="/short-posts">Short Posts</Link>
+                </li>
+                <li>
                   <Link href="https://github.com/foo42">Github</Link>
                 </li>
               </ul>

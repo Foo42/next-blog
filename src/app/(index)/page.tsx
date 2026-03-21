@@ -5,6 +5,7 @@ import AboutMe from '@/components/AboutMe'
 import lakes from '../../../public/lakes_fade_small-min.png'
 import Image from 'next/image'
 import styles from './style.module.css'
+import ShortPostList from '@/components/shortPostList'
 
 export const metadata = {
   title: 'Home',
@@ -24,6 +25,10 @@ export default async function Home() {
       <section className='card raised'>
         <h3 style={{marginBottom: 'var(--s1)'}}><Link href='/posts'>Posts</Link></h3>
         <PostList/>
+      </section>
+      <section className='card raised'>
+        <h3 style={{marginBottom: 'var(--s1)'}}><Link href='/short-posts'>Short Posts</Link></h3>
+        <ShortPostList/>
       </section>
     </main>
   )

@@ -1,0 +1,9 @@
+.postDate {
+  text-align: right;
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.postHeader {
+  border-bottom: 1px solid rgb(var(--theme-very-light-green-rgb))
+}

@@ -10,7 +10,6 @@ export default function Layout(props: PropsWithChildren<{}>) {
           <div className={styles.banner}>
             <h1><Link href="/">Julian&apos;s Thoughts</Link></h1>
           </div>
-          {/* <nav>This is nav</nav> */}
         </div>
       </header>
       {props.children}
