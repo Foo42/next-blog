@@ -21,7 +21,7 @@ async function ShortPostList(){
     <>
     <div>
     <p style={{borderBottom: '1px solid gray'}}>
-        Short, untitled, quick thoughts (like tweets, but on my own site). At some point I might implement ActivityPub so these can be published directly into the fediverse, but for now they're available here for POSSE, or via RSS feed.
+        Short, untitled, quick thoughts (like tweets, but on my own site). At some point I might implement ActivityPub so these can be published directly into the fediverse, but for now they&apos;re available here for POSSE, or via RSS feed.
     </p>
     </div>
     <ul className='plain'>
