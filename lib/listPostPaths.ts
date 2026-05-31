@@ -57,6 +57,6 @@ export async function loadFileFromSlug(slug: string): Promise<PostFile | undefin
 }
 
 function generateMissingSlug<T extends {title: string, slug?: string}>(metadata: T): T & {slug: string} {
-  const generatedSlug = metadata.title.replace(/\W+/g, '-')
+  const generatedSlug = metadata.title.replace(/\W+/g, '-').replace(/-$/,'')
   return {...metadata, slug: metadata.slug ?? generatedSlug}
 }
