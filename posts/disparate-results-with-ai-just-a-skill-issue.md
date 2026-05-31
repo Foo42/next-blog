@@ -1,6 +1,6 @@
 ---
 date: 2026-05-31
-title: Disparate results with AI - Is it a skill issue?
+title: Disparate Results with AI - Just a Skill Issue?
 ---
 
 It's 2026, and there is a lot of discussion around how good coding agents are. Peruse any hacker news comment section and you'll find one camp saying they are worthless, while the other claims they are producing high quality output at unprecedented pace with an ever growing stable of agents thundering away in parallel. Where these two opinions interact, the latter group routinely accuses the former of skill issues, in more or less polite terms.
@@ -8,7 +8,6 @@ It's 2026, and there is a lot of discussion around how good coding agents are. P
 As of 2026-05, my opinions are somewhere in between these extremes, but more to the point, I think the focus on users' techniques overlooks 3 other important important factors which influence the degree to which AI can assist. 
 
 In summary, I'd class the four factors as:
-
 1. What your definition of "good" is
 2. How well suited the model is
 3. How easily you can evaluate the results
