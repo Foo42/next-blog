@@ -24,13 +24,13 @@ const metaDataSchema = z.object({
   aliases: z.array(z.string()).optional().default([]),
   tags: z.array(z.string()).optional().default([])
 }).passthrough().transform(generateMissingSlug)
-export type PostMetatdata = z.infer<typeof metaDataSchema>
+export type PostMetadata = z.infer<typeof metaDataSchema>
 
 export type PostFile = {
   filePath: string,
   fullFilePath: string
   markdown: string,
-  metadata: PostMetatdata
+  metadata: PostMetadata
 }
 
 export async function listSortedPosts(): Promise<PostFile[]>{

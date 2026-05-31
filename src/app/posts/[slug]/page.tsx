@@ -1,8 +1,10 @@
 import { Markdown } from "@/components/markdown"
-import { listSortedPosts, loadFileFromSlug, PostFile } from "../../../../lib/listPostPaths"
+import { listSortedPosts, loadFileFromSlug } from "../../../../lib/listPostPaths"
+import { stripH1 } from "../../../../lib/stripH1"
 import styles from "./style.module.css"
 import PostAgeWarning from "@/components/PostAgeWarning"
 import BlogComments from "@/components/BlogComments"
+import { notFound } from "next/navigation"
 
 type Params = {
   slug: string
@@ -35,7 +37,7 @@ export default async function Post(props: Props) {
   const post = stripH1(await loadFileFromSlug(params.slug))
   if (post === undefined){
     // todo custom error to return a 404
-    throw new Error('Not found')
+    notFound()
   }
   return (
     <main>
@@ -51,14 +53,4 @@ export default async function Post(props: Props) {
       </article>
       <BlogComments/>
     </main>)
-}
-
-function stripH1<T extends PostFile|undefined>(post: T): T {
-  if (post === undefined){
-    return post
-  }
-  const h1Regex = /^\s*#\s*\w.*$/
-  const lines = post.markdown.split('\n')
-  const withoutH1 = lines.filter(line => !line.match(h1Regex))
-  return {...post, markdown: withoutH1.join('\n')}
 }

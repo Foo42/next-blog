@@ -1,8 +1,9 @@
 import { Markdown } from "@/components/markdown"
-import {listSortedShortPosts, loadFromId, ShortPostFile} from "../../../../lib/listShortPostPaths"
+import {listSortedShortPosts, loadFromId} from "../../../../lib/listShortPostPaths"
+import { stripH1 } from "../../../../lib/stripH1"
 import styles from "./style.module.css"
 import PostAgeWarning from "@/components/PostAgeWarning"
-import BlogComments from "@/components/BlogComments"
+import { notFound } from "next/navigation"
 
 type Params = {
   id: string
@@ -35,7 +36,7 @@ export default async function ShortPost(props: Props) {
   const post = stripH1(await loadFromId(params.id))
   if (post === undefined){
     // todo custom error to return a 404
-    throw new Error('Not found')
+    notFound()
   }
   return (
     <main>
@@ -50,14 +51,4 @@ export default async function ShortPost(props: Props) {
         <Markdown markdown={post.markdown} initialHeadingLevel={2} classNames={['pros']} />
       </article>
     </main>)
-}
-
-function stripH1<T extends ShortPostFile|undefined>(post: T): T {
-  if (post === undefined){
-    return post
-  }
-  const h1Regex = /^\s*#\s*\w.*$/
-  const lines = post.markdown.split('\n')
-  const withoutH1 = lines.filter(line => !line.match(h1Regex))
-  return {...post, markdown: withoutH1.join('\n')}
 }

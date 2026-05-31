@@ -9,14 +9,14 @@ const metaDataSchema = z.object({
   date: z.date().or(z.string().transform(s => new Date(s))),
   tags: z.array(z.string()).optional().default([])
 })
-export type ShortPostMetatdata = z.infer<typeof metaDataSchema>
+export type ShortPostMetadata = z.infer<typeof metaDataSchema>
 
 export type ShortPostFile = {
   filePath: string,
   fullFilePath: string,
   id: string,
   markdown: string,
-  metadata: ShortPostMetatdata
+  metadata: ShortPostMetadata
 }
 
 export async function loadFromId(id: string): Promise<ShortPostFile> {
