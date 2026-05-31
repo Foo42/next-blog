@@ -4,12 +4,18 @@ import {siteOrigin} from '../../../../lib/hostname'
 
 export const metadata = {
   title: 'Short Posts',
+  description: 'Short thoughts and notes from Julian Haeger.',
   alternates: {
     canonical: `${siteOrigin}/short-posts`,
     types: {
       'application/atom+xml': `${siteOrigin}/feeds/short-posts/atom.xml`
     }
-  }
+  },
+  openGraph: {
+    type: 'website',
+    url: `${siteOrigin}/short-posts`,
+    description: 'Short thoughts and notes from Julian Haeger.',
+  },
 }
 
 export default async function ShortPostsIndex() {

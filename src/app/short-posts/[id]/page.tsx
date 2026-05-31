@@ -1,6 +1,8 @@
 import { Markdown } from "@/components/markdown"
 import {listSortedShortPosts, loadFromId} from "../../../../lib/listShortPostPaths"
 import { stripH1 } from "../../../../lib/stripH1"
+import { extractDescription } from "../../../../lib/extractDescription"
+import { siteOrigin } from "../../../../lib/hostname"
 import styles from "./style.module.css"
 import PostAgeWarning from "@/components/PostAgeWarning"
 import { notFound } from "next/navigation"
@@ -14,13 +16,27 @@ type Props = {
 
 export async function generateMetadata(props: Props) {
   const params = await props.params
-  const title = `Post ${params.id}`
+  const post = await loadFromId(params.id).catch(() => undefined)
+  const title = `Short post — ${params.id}`
+  const description = post ? extractDescription(post.markdown) : undefined
+  const url = `${siteOrigin}/short-posts/${params.id}`
   return {
-    title: title,
+    title,
+    description,
     authors: [{name: 'Julian Haeger'}],
+    alternates: { canonical: url },
     openGraph: {
-      title: title
-    }
+      title,
+      description,
+      type: 'article' as const,
+      url,
+      publishedTime: post?.metadata.date.toISOString(),
+      authors: ['Julian Haeger'],
+    },
+    twitter: {
+      title,
+      description,
+    },
   }
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import { PropsWithChildren } from "react"
 import { Crimson_Text } from 'next/font/google'
+import { siteOrigin } from 'lib/hostname'
 
 import './globals.css'
 import './typography2.css'
@@ -10,12 +11,26 @@ import styles from './layout.module.css'
 
 const crimsonText = Crimson_Text({subsets: ['latin'], weight: '400'})
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export const metadata: Metadata = {
   title: {
     template: '%s | Julian Haeger',
-    default: 'Home'
+    default: 'Julian Haeger'
   },
-  viewport: "width=device-width, initial-scale=1"
+  description: 'Blog of Julian Haeger — Writing about software engineering, technology, and anything else I fancy',
+  openGraph: {
+    siteName: 'Julian Haeger',
+    type: 'website',
+    images: [`${siteOrigin}/profile-pic.jpg`],
+  },
+  twitter: {
+    card: 'summary',
+    images: [`${siteOrigin}/profile-pic.jpg`],
+  },
 }
 
 

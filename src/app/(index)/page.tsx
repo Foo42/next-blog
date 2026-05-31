@@ -6,9 +6,18 @@ import lakes from '../../../public/lakes_fade_small-min.png'
 import Image from 'next/image'
 import styles from './style.module.css'
 import ShortPostList from '@/components/shortPostList'
+import { siteOrigin } from 'lib/hostname'
 
 export const metadata = {
   title: 'Home',
+  description: 'Blog of Julian Haeger — Writing about software engineering, technology, and anything else I fancy',
+  alternates: {
+    canonical: siteOrigin,
+  },
+  openGraph: {
+    type: 'website',
+    url: siteOrigin,
+  },
 }
 
 export default async function Home() {
