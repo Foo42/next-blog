@@ -53,7 +53,6 @@ export async function listSortedPosts(): Promise<PostFile[]>{
 
 export async function loadFileFromSlug(slug: string): Promise<PostFile | undefined> {
   const file = (await listSortedPosts()).find(({metadata}) => metadata.slug === slug)
-  console.log(({slug, file}))
   return file
 }
 
