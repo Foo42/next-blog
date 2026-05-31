@@ -50,8 +50,8 @@ pre {
   padding: var(--s1);
 }
 
-ul {
-  padding-left: var(--s0);
+ul, ol {
+  padding-left: var(--s2);
 }
 
 .pros {
@@ -63,6 +63,26 @@ ul {
 
   * {
     margin-bottom: var(--s1);
+  }
+
+  li {
+    margin-bottom: 0.2em;
+    margin-block-start: 0;
+  }
+
+  :is(h2, h3) {
+    margin-top: var(--s2);
+    margin-bottom: var(--s-1);
+  }
+
+  h4 {
+    margin-top: var(--s1);
+    margin-bottom: var(--s-1);
+  }
+
+  :is(h5, h6) {
+    margin-top: var(--s0);
+    margin-bottom: var(--s-1);
   }
 
   a {
